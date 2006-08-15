@@ -1,0 +1,50 @@
+%% $Id: manova5050.Rd 49 2006-08-15 13:48:26Z bhm $
+\encoding{latin1}
+\name{manova5050}
+\alias{manova5050}
+\title{Computation of 50-50 MANOVA results}
+
+\description{
+The function takes a design-with-responses object created by \code{xy_Obj} and produces 50-50 MANOVA output. Results are produced for each term in the model.}
+}
+
+\usage{
+manova5050(xyObj, stand)
+}
+
+\arguments{
+  \item{xyObj}{design-with-responses object}
+  \item{stand}{standardisation of responses (0 or 1)}
+}
+
+\details{
+Classical multivariate ANOVA (MANOVA) are useless in many practical cases. The tests perform poorly in cases with several highly correlated responses and the method collapses when the number of responses exceeds the number of observations. 50-50 MANOVA is made to handle this problem. Principal component analysis (PCA) is an important part of this methodology. Each test is based on a separate PCA.}
+
+\value{ 
+A list with components
+\item{termNames}{model term names}
+\item{exVarSS}{explained variances calculated from sums of squares summed over all responses}
+\item{df}{degrees of freedom - adjusted for other terms in model}
+\item{df_om}{degrees of freedom - adjusted for terms contained in actual term}
+\item{nPC}{number of principal components used for testing}
+\item{nBU}{number of principal components used as buffer components}
+\item{exVarPC}{variance explained by \code{nPC} components}
+\item{exVarBU}{variance explained by \code{(nPC+nBU)} components}
+\item{pValues}{50-50 MANOVA p-values}
+\item{stand}{logical.  Whether the responses are standardised.}
+}
+
+\references{
+Langsrud, Ø. (2002) 
+Rotation Tests.
+\emph{The Statistician}, \bold{51}, 305--317. 
+}
+
+\author{Øyvind Langsrud and Bjørn-Helge Mevik}
+
+\note{The 50-50 MANOVA \eqn{p}-values are based on the Hotelling-Lawley Trace Statistic. The number of components for testing and the number of buffer components are chosen according to default rules.}
+
+\seealso{\code{\link{ffmanova}}}
+\keyword{models}
+\keyword{design}
+\keyword{multivariate}

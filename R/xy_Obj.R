@@ -1,4 +1,4 @@
-### $Id: xy_Obj.R 26 2006-04-18 13:39:09Z bhm $
+### $Id: xy_Obj.R 53 2007-04-20 12:05:00Z bhm $
 # %=============== xy_Obj.m ====================
 # %  xyObj = xy_Obj(xObj,Y,yNames)
 # %      takes an object created by x_Obj as input and
@@ -11,7 +11,7 @@
 # %   yNames{*,1}: same as input
 # %     ssTotFull: = sum(sum(Y.^2));
 # %         ssTot: = sum(sum(center(Y).^2));
-# %           ss: ss´s summed over all responses
+# %           ss: ss's summed over all responses
 # %         Beta: regr model: Y = D_om*Beta  (see linregEst)
 # %         Yhat: fitted values
 # %      YhatStd: stds of fitted values

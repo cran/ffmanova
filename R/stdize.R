@@ -1,6 +1,6 @@
 ### stdize.R: center and scale a matrix.
-### By Bjørn-Helge Mevik
-### $Id: stdize.R 40 2006-07-26 10:35:00Z bhm $
+### By Bjoern-Helge Mevik
+### $Id: stdize.R 53 2007-04-20 12:05:00Z bhm $
 
 stdize <- function(x, center = TRUE, scale = TRUE, avoid.zero.divisor = FALSE) {
     n <- nrow(x)

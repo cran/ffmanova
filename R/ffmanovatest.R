@@ -1,4 +1,4 @@
-### $Id: ffmanovatest.R 45 2006-08-15 13:11:29Z bhm $
+### $Id: ffmanovatest.R 53 2007-04-20 12:05:00Z bhm $
 # % File: ffmanovatest.m
 # %
 # % Purpose: Perform Fifty-Fifty MANOVA tests from DFmodel rows of
@@ -51,7 +51,7 @@
 #     dfError = errorData{2};
 #     errorData = errorData{1};
 #     nZeroRows = dfError-size(errorData,1);
-#     %%% errorData = [errorData´ zeros(size(errorData,2),nZeroRows)]´;
+#     %%% errorData = [errorData' zeros(size(errorData,2),nZeroRows)]';
 #     min_nZeroRows = size(errorData,2) - size(errorData,1);
 #     min_nZeroRows = min(min_nZeroRows,nZeroRows);
 #     if(min_nZeroRows>0)

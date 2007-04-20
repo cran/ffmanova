@@ -1,8 +1,8 @@
-### $Id: ffmanova_div.R 45 2006-08-15 13:11:29Z bhm $
+### $Id: ffmanova_div.R 53 2007-04-20 12:05:00Z bhm $
 
 
 matlabColon <- function(from, to) { if(from > to) numeric(0) else from:to }
-# Author:: Bjørn-Helge Mevik
+# Author:: Bjoern-Helge Mevik
 
 
 norm = function(X){

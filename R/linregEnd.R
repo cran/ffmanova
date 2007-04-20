@@ -1,4 +1,4 @@
-### $Id: linregEnd.R 45 2006-08-15 13:11:29Z bhm $
+### $Id: linregEnd.R 53 2007-04-20 12:05:00Z bhm $
 # %=============== linregEnd.m ====================
 # %  [BetaU,msError,errorObs,Yhat] = linregEnd(Umodel,Y)
 # %        performs the part of linregEst that is not performed by linregStart.
@@ -9,7 +9,7 @@
 # function [BetaU,msError,errorObs,Yhat] = linregEnd(Umodel,Y)
 # BetaU = Umodel'*Y;
 # Yhat = Umodel*BetaU;
-# %%%---%%%  errorObs = Uerror´*Y;
+# %%%---%%%  errorObs = Uerror'*Y;
 # [U S V] = economySVD(Y-Yhat);
 # df_error = size(Umodel,1) - size(Umodel,2);
 # errorObs = S*V'; %%%% smartere beregning her???

@@ -1,4 +1,4 @@
-%% $Id: manova5050.Rd 49 2006-08-15 13:48:26Z bhm $
+%% $Id: manova5050.Rd 58 2012-11-25 16:30:08Z bhm $
 \encoding{latin1}
 \name{manova5050}
 \alias{manova5050}

@@ -1,4 +1,3 @@
-### $Id: c2df.R 45 2006-08-15 13:11:29Z bhm $
 # %=============== c2df.m ====================
 # % df = c2df(C)
 # %   Input: C{1,*}  -  a matrix partitioned into a cell array

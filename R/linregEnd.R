@@ -1,4 +1,3 @@
-### $Id: linregEnd.R 53 2007-04-20 12:05:00Z bhm $
 # %=============== linregEnd.m ====================
 # %  [BetaU,msError,errorObs,Yhat] = linregEnd(Umodel,Y)
 # %        performs the part of linregEst that is not performed by linregStart.

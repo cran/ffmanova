@@ -4,12 +4,15 @@
 \alias{ffmanova}
 \title{Fifty-fifty MANOVA}
 \usage{
-ffmanova(formula, data, stand = TRUE, nSim = 0, verbose = TRUE)
+ffmanova(formula, data = NULL, stand = TRUE, nSim = 0,
+  verbose = TRUE, returnModel = TRUE, returnY = FALSE,
+  returnYhat = FALSE, returnYhatStd = FALSE, newdata = NULL,
+  linComb = NULL, nonEstimableAsNA = TRUE, outputClass = "ffmanova")
 }
 \arguments{
-\item{formula}{Model formula.  See Details.}
+\item{formula}{Model formula.  See "Note" below.}
 
-\item{data}{Data frame with model data.}
+\item{data}{An optional data frame or list.}
 
 \item{stand}{Logical. Standardization of responses. This option has effect
 on the 50-50 MANOVA testing and the calculation of \code{exVarSS}.}
@@ -18,8 +21,24 @@ on the 50-50 MANOVA testing and the calculation of \code{exVarSS}.}
 rotation tests. Can be a single nonnegative integer or a list of values for
 each term.}
 
-\item{verbose}{Logical.  If \code{TRUE}, the rotation tests print trace
-information.}
+\item{verbose}{Logical.  If \code{TRUE}, the rotation tests print trace information.}
+
+\item{returnModel}{When \code{TRUE}, and object, \code{ffModel}, with output from \code{\link{ffModelObj}} is included in output. 
+Must be \code{TRUE} to enable predictions by \code{\link{predict.ffmanova}}.}
+
+\item{returnY}{Response matrix, \code{Y}, in output when \code{TRUE}.}
+
+\item{returnYhat}{Matrix \code{Yhat} of fitted values corresponding to \code{Y} in output when \code{TRUE}.}
+
+\item{returnYhatStd}{Standard errors, \code{YhatStd}, in output when \code{TRUE}.}
+
+\item{newdata}{Possible input to \code{\link{predict.ffmanova}}. When non-NULL, prediction results will be included output.}
+
+\item{linComb}{Possible input to \code{\link{predict.ffmanova}} in addition to \code{newdata}.}
+
+\item{nonEstimableAsNA}{Will be used as input to \code{\link{predict.ffmanova}} when \code{newdata} and/or \code{linComb} is non-NULL.}
+
+\item{outputClass}{When set to, \code{"anova"}, \code{\link{ffAnova}} results will be produced.}
 }
 \value{
 An object of class \code{"ffmanova"}, which consists of the
@@ -43,6 +62,8 @@ adjusted \eqn{p}-values according to false discovery rates}
 \item{simN}{number of simulations performed for each term (same as input)}
 The matrices \code{stat}, \code{pRaw}, \code{pAdjusted} and \code{pAdjFDR}
 have one row for each model term and one column for each response.
+
+According to the input parameters, additional elements can be included in output.
 }
 \description{
 General linear modeling of fixed-effects models with multiple responses is
@@ -51,9 +72,6 @@ univariate \eqn{p}-values and adjusted \eqn{p}-values using rotation
 testing.
 }
 \details{
-The model is specified with \code{formula}, in the same way as in \code{lm}
-(except that offsets are not supported).  See \code{\link{lm}} for details.
-
 An overall \eqn{p}-value for all responses is calculated for each model
 term. This is done using the 50-50 MANOVA method, which is a modified
 variant of classical MANOVA made to handle several highly correlated
@@ -75,6 +93,11 @@ a polynomial model with a single experimental variable produce results
 equivalent to the results using an orthogonal polynomial.  } In addition to
 significance testing an explained variance measure, which is based on sums
 of sums of squares, is computed for each model term.
+}
+\note{
+The model is specified with \code{formula}, in the same way as in \code{lm}
+(except that offsets are not supported).  See \code{\link{lm}} for details.
+Input parameters \code{formula} and \code{data} will be interpreted by \code{\link{model.frame}}.
 }
 \examples{
 
@@ -146,8 +169,7 @@ Environmental Microbiology}, \bold{71}, 2086-2094.
 See also \url{https://www.langsrud.com/stat/program.htm}.
 }
 \seealso{
-\code{\link{manova5050}}, \code{\link{rotationtests}} and
-\code{\link{unitests}}; the work horse functions.
+\code{\link{ffAnova}} and \code{\link{predict.ffmanova}}.
 }
 \author{
 Øyvind Langsrud and Bjørn-Helge Mevik

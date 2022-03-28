@@ -1,8 +1,8 @@
 Package: ffmanova
 Type: Package
 Title: Fifty-Fifty MANOVA
-Version: 1.1.0
-Date: 2019-03-28
+Version: 1.1.1
+Date: 2022-03-28
 Authors@R: c(person("Øyvind", "Langsrud", role = c("aut", "cre"),
                     email = "oyl@ssb.no"),
              person("Bjørn-Helge", "Mevik", role = c("aut")))
@@ -16,8 +16,8 @@ Suggests: car, testthat
 License: GPL-2
 URL: https://github.com/olangsrud/ffmanova
 BugReports: https://github.com/olangsrud/ffmanova/issues
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.2
 NeedsCompilation: no
-Packaged: 2019-03-28 14:36:23 UTC; oyl
+Packaged: 2022-03-28 12:16:29 UTC; oyl
 Repository: CRAN
-Date/Publication: 2019-03-28 14:50:03 UTC
+Date/Publication: 2022-03-28 12:30:02 UTC
